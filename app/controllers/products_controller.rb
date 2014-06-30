@@ -13,5 +13,16 @@ class ProductsController < ApplicationController
 		redirect_to '/products'
 	end
 
+	def add_to_cart
+		prodcut = Product.find(params[:id])
+		@cart = Cart.new
+		@cart.add_product(product)
+		redirect_to(:action => 'show_cart')
+	end
+
+	def show_cart
+		
+	end
+
 
 end
